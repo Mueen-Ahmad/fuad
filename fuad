@@ -153,7 +153,7 @@
                             <div class="relative aspect-[4/4] w-full rounded-2xl overflow-hidden bg-slate-100 group">
                                 <!-- Note: Facebook photo page URLs are HTML pages rather than direct raw image files, so we provide a clean artistic fallback & direct link to his Facebook photo -->
                                 <img 
-                                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                                    src="https://imagetourls.com/en/v?u=https%3A%2F%2Fcdn.imagetourls.com%2Fuploads%2FtyImg%2FxujfvC8y.jpg" 
                                     alt="Md Farhan Fuad (Modhu)" 
                                     onerror="this.onerror=null; this.src='https://placehold.co/600x600/f59e0b/ffffff?text=Md+Farhan+Fuad+(Modhu)';"
                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
