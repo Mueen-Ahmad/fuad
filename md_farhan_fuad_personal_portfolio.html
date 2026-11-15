@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Farhan Fuad (Modhu) | Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display for editorial accents -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        honey: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            900: '#78350f',
+                        },
+                        medical: {
+                            50: '#f0fdfa',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-200 selection:text-amber-900">
+
+    <!-- Toast Notification Container (Replaces alert) -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/85 border-b border-slate-200/80 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-white font-bold shadow-sm group-hover:scale-105 transition-transform">
+                        M
+                    </div>
+                    <div>
+                        <span class="font-bold text-slate-900 tracking-tight text-lg block leading-none">Farhan Fuad</span>
+                        <span class="text-[11px] font-medium text-amber-600 tracking-wider uppercase">"Modhu"</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-amber-600 transition-colors">About</a>
+                    <a href="#vision" class="hover:text-amber-600 transition-colors">Future Vision</a>
+                    <a href="#photography" class="hover:text-amber-600 transition-colors">Photography</a>
+                    <a href="#contact" class="px-4 py-2 rounded-full bg-slate-900 text-white hover:bg-amber-600 transition-colors shadow-sm">
+                        Get in Touch
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-2 shadow-lg">
+            <a href="#about" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-700">About Me</a>
+            <a href="#vision" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-700">Future Vision</a>
+            <a href="#photography" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-700">Photography</a>
+            <a href="#contact" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium bg-amber-500 text-white text-center mt-2">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <!-- Subtle Background Decorations -->
+        <div class="absolute top-0 right-0 -translate-y-12 translate-x-1/4 w-96 h-96 bg-amber-200/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/80 border border-amber-200 text-amber-800 text-xs font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                        HSC 2nd Year • Rajshahi Collegiate College
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.15]">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-500">Md Farhan Fuad</span>
+                        <span class="block font-serif italic font-normal text-2xl sm:text-3xl text-slate-500 mt-2">
+                            Known warmly as "Modhu"
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        A dedicated science student in Rajshahi blending academic discipline with creative vision. Aspiring <strong class="text-slate-800 font-semibold">Medical Doctor</strong>, future founder of a pure <strong class="text-amber-700 font-semibold">Honey Enterprise</strong>, and passionate <strong class="text-slate-800 font-semibold">Photographer</strong>.
+                    </p>
+
+                    <!-- Role Pills -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-2.5 pt-1">
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 shadow-sm">
+                            <i class="fa-solid fa-stethoscope text-teal-600"></i> Future Doctor
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 shadow-sm">
+                            <i class="fa-solid fa-jar text-amber-500"></i> Honey Entrepreneur
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-medium text-slate-700 shadow-sm">
+                            <i class="fa-solid fa-camera-retro text-indigo-500"></i> Photographer
+                        </span>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-3">
+                        <a href="#contact" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                            <span>Connect With Me</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61592794767238" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white hover:bg-blue-50 text-slate-700 hover:text-blue-600 border border-slate-200 font-medium text-sm transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-facebook text-blue-600 text-base"></i>
+                            <span>Facebook Profile</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile Card Column -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Decorative Offset Card -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-amber-400 to-teal-400 rounded-3xl rotate-3 opacity-20"></div>
+                        
+                        <div class="relative bg-white p-5 rounded-3xl border border-slate-200/90 shadow-xl">
+                            <div class="relative aspect-[4/4] w-full rounded-2xl overflow-hidden bg-slate-100 group">
+                                <!-- Note: Facebook photo page URLs are HTML pages rather than direct raw image files, so we provide a clean artistic fallback & direct link to his Facebook photo -->
+                                <img 
+                                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                                    alt="Md Farhan Fuad (Modhu)" 
+                                    onerror="this.onerror=null; this.src='https://placehold.co/600x600/f59e0b/ffffff?text=Md+Farhan+Fuad+(Modhu)';"
+                                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                >
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-transparent to-transparent"></div>
+                                
+                                <!-- Overlay Link to Original Facebook Photo -->
+                                <a href="https://www.facebook.com/photo?fbid=122125695897426492&set=a.122110906419426492" target="_blank" rel="noopener noreferrer" class="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-xs font-semibold text-slate-800 hover:bg-amber-500 hover:text-white transition-colors shadow-sm flex items-center gap-1.5">
+                                    <i class="fa-brands fa-facebook text-blue-600"></i>
+                                    <span>View FB Photo</span>
+                                </a>
+
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                    <p class="text-xs uppercase tracking-wider text-amber-300 font-semibold">Rajshahi, Bangladesh</p>
+                                    <h2 class="text-xl font-bold">Md Farhan Fuad</h2>
+                                    <p class="text-xs text-slate-200">Nickname: Modhu</p>
+                                </div>
+                            </div>
+
+                            <!-- Quick Info Strip -->
+                            <div class="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-100 text-center">
+                                <div class="p-2.5 rounded-xl bg-slate-50">
+                                    <span class="block text-xs text-slate-400">Institution</span>
+                                    <span class="text-xs font-bold text-slate-800">Rajshahi Collegiate</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-amber-50/70">
+                                    <span class="block text-xs text-amber-700/70">Current Class</span>
+                                    <span class="text-xs font-bold text-amber-900">HSC 2nd Year</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Academic Profile -->
+    <section id="about" class="py-16 sm:py-20 bg-white border-y border-slate-200/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-600">Biography & Background</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Driven by Purpose, Guided by Curiosity</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Rooted in the historic educational city of Rajshahi, I balance rigorous academic preparation with entrepreneurial ambition and visual storytelling.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Education -->
+                <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-amber-300 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Academic Journey</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Currently pursuing <strong>HSC 2nd Year</strong> at the prestigious <strong>Rajshahi Collegiate College</strong>, focusing deeply on biological and physical sciences.
+                    </p>
+                    <div class="text-xs font-semibold text-slate-500 flex items-center gap-1.5">
+                        <i class="fa-solid fa-location-dot text-amber-500"></i> Rajshahi Division
+                    </div>
+                </div>
+
+                <!-- Card 2: Identity -->
+                <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-amber-300 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">The Story Behind "Modhu"</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Affectionately called <strong>Modhu</strong> (meaning Honey), my nickname reflects both warmth in community relationships and my vision to build a pure honey brand.
+                    </p>
+                    <div class="text-xs font-semibold text-amber-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart text-amber-500"></i> Authentic & Approachable
+                    </div>
+                </div>
+
+                <!-- Card 3: Creative Eye -->
+                <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-amber-300 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-aperture"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Visual Storyteller</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        As a dedicated <strong>Photographer</strong>, I love capturing natural light, everyday street moments in Rajshahi, and candid human emotions through the lens.
+                    </p>
+                    <div class="text-xs font-semibold text-purple-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-camera text-purple-500"></i> Composition & Framing
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual Future Vision Section -->
+    <section id="vision" class="py-16 sm:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-teal-600">Road Ahead</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Dual Ambitions for Tomorrow</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Combining compassionate healthcare service with sustainable, pure natural enterprise.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Pillar 1: Future Doctor -->
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-900 to-slate-900 text-white p-8 sm:p-10 shadow-xl">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-teal-400/10 rounded-full -translate-y-12 translate-x-12 blur-2xl"></div>
+                    
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs font-semibold mb-6">
+                        <i class="fa-solid fa-user-doctor"></i> Future Profession
+                    </div>
+
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-4">Becoming a Medical Doctor</h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                        Medicine is more than a career path—it is a lifelong commitment to healing and community welfare. My goal is to excel in my HSC examinations, enter medical college, and serve patients with empathy, integrity, and modern clinical excellence.
+                    </p>
+
+                    <ul class="space-y-3 text-sm text-teal-100">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-teal-400"></i>
+                            <span>Strong foundation in Biology & Chemistry</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-teal-400"></i>
+                            <span>Dedicated to accessible healthcare in Bangladesh</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2: Honey Selling Company -->
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-500 via-amber-600 to-orange-700 text-white p-8 sm:p-10 shadow-xl">
+                    <div class="absolute bottom-0 right-0 w-56 h-56 bg-white/10 rounded-full translate-y-16 translate-x-16 blur-2xl"></div>
+
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 border border-white/30 text-amber-50 text-xs font-semibold mb-6">
+                        <i class="fa-solid fa-seedling"></i> Future Business Model
+                    </div>
+
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-4">Pure Honey Selling Company</h3>
+                    <p class="text-amber-50 text-sm sm:text-base leading-relaxed mb-6">
+                        Inspired by my nickname <em>"Modhu"</em> and health-conscious values, I plan to establish a trusted, 100% pure honey brand—connecting ethical apiaries directly with families seeking unadulterated natural nutrition.
+                    </p>
+
+                    <ul class="space-y-3 text-sm text-amber-50">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-200"></i>
+                            <span>Raw, unadulterated & lab-verified honey sourcing</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-200"></i>
+                            <span>Direct-to-consumer model built on transparency</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Showcase -->
+    <section id="photography" class="py-16 sm:py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Creative Portfolio</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold mt-2">Through My Lens</h2>
+                    <p class="text-slate-400 mt-2 text-sm sm:text-base max-w-xl">
+                        Capturing golden hour serenity, nature's textures, and candid life moments across Rajshahi.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2" id="photo-filters">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-amber-500 text-slate-900 transition-colors">All Shots</button>
+                    <button data-filter="nature" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors">Nature & Golden Hour</button>
+                    <button data-filter="street" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors">Life & Culture</button>
+                </div>
+            </div>
+
+            <!-- Interactive Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <!-- Photo Item 1 -->
+                <div class="photo-card group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[4/3] cursor-pointer" data-category="nature" onclick="openLightbox('Golden Honey Harvest Light', 'Warm sunset tones inspiring the Modhu brand aesthetic.', 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=900&q=80')">
+                    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="Golden Honey Aesthetic" onerror="this.src='https://placehold.co/800x600/1e293b/fbbf24?text=Golden+Honey+Light'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[11px] uppercase tracking-wider text-amber-400 font-semibold">Nature & Macro</span>
+                        <h3 class="text-base font-bold text-white">Golden Honey Light</h3>
+                    </div>
+                </div>
+
+                <!-- Photo Item 2 -->
+                <div class="photo-card group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[4/3] cursor-pointer" data-category="street" onclick="openLightbox('Padma River Dusk', 'Evening reflections along the riverbank in Rajshahi.', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80')">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="River Dusk" onerror="this.src='https://placehold.co/800x600/1e293b/fbbf24?text=Riverbank+Dusk'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[11px] uppercase tracking-wider text-amber-400 font-semibold">Landscape</span>
+                        <h3 class="text-base font-bold text-white">Riverbank Serenity</h3>
+                    </div>
+                </div>
+
+                <!-- Photo Item 3 -->
+                <div class="photo-card group relative rounded-2xl overflow-hidden bg-slate-800 aspect-[4/3] cursor-pointer" data-category="nature" onclick="openLightbox('Botanical Morning', 'Fresh morning dew and vibrant greenery.', 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80')">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" alt="Botanical Morning" onerror="this.src='https://placehold.co/800x600/1e293b/fbbf24?text=Botanical+Morning'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[11px] uppercase tracking-wider text-amber-400 font-semibold">Nature</span>
+                        <h3 class="text-base font-bold text-white">Sunlit Canopy</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Direct Connect Section -->
+    <section id="contact" class="py-16 sm:py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Contact Information Panel -->
+                    <div class="lg:col-span-5 bg-slate-900 text-white p-8 sm:p-10 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Contact Details</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold mt-2">Let's Start a Conversation</h2>
+                            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                                Whether you want to connect regarding academics, photography collaborations, or future honey business partnerships, feel free to reach out directly.
+                            </p>
+
+                            <div class="space-y-5 mt-8">
+                                <!-- Phone -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-slate-800 text-amber-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <p class="text-xs text-slate-400">Phone / WhatsApp</p>
+                                        <div class="flex items-center gap-2 mt-0.5">
+                                            <a href="tel:01346286158" class="text-sm sm:text-base font-semibold text-white hover:text-amber-400 transition-colors">01346286158</a>
+                                            <button onclick="copyText('01346286158', 'Phone number')" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs" title="Copy Phone">
+                                                <i class="fa-regular fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-slate-800 text-amber-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <p class="text-xs text-slate-400">Gmail Address</p>
+                                        <div class="flex items-center gap-2 mt-0.5">
+                                            <a href="mailto:farhanfuad311227@gmail.com" class="text-sm font-semibold text-white hover:text-amber-400 transition-colors truncate">farhanfuad311227@gmail.com</a>
+                                            <button onclick="copyText('farhanfuad311227@gmail.com', 'Email address')" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs shrink-0" title="Copy Email">
+                                                <i class="fa-regular fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Address -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-slate-800 text-amber-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400">Location</p>
+                                        <p class="text-sm sm:text-base font-semibold text-white mt-0.5">Rajshahi, Bangladesh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Link -->
+                        <div class="pt-8 mt-8 border-t border-slate-800">
+                            <a href="https://www.facebook.com/profile.php?id=61592794767238" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-colors w-full justify-center">
+                                <i class="fa-brands fa-facebook text-lg"></i>
+                                <span>Follow on Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Message Form -->
+                    <div class="lg:col-span-7 p-8 sm:p-10">
+                        <h3 class="text-xl font-bold text-slate-900">Send a Quick Message</h3>
+                        <p class="text-sm text-slate-500 mt-1 mb-6">Fill out the form below to compose an email directly to Farhan.</p>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="sender-name" class="block text-xs font-semibold text-slate-700 mb-1.5">Your Name</label>
+                                    <input type="text" id="sender-name" required placeholder="Enter your name" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors">
+                                </div>
+                                <div>
+                                    <label for="sender-topic" class="block text-xs font-semibold text-slate-700 mb-1.5">Topic</label>
+                                    <select id="sender-topic" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors">
+                                        <option value="General Greeting">General Greeting</option>
+                                        <option value="Photography Inquiry">Photography Inquiry</option>
+                                        <option value="Honey Business Venture">Honey Business Venture</option>
+                                        <option value="Academic / College">Academic / College</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="sender-message" class="block text-xs font-semibold text-slate-700 mb-1.5">Message</label>
+                                <textarea id="sender-message" rows="4" required placeholder="Write your message for Md Farhan Fuad..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:border-amber-500 focus:bg-white transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition-all shadow-sm hover:shadow flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-slate-800">Md Farhan Fuad (Modhu)</span>
+                <span>•</span>
+                <span>Rajshahi</span>
+            </div>
+            <p class="text-xs text-slate-400">
+                Student • Aspiring Doctor • Honey Entrepreneur • Photographer
+            </p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Photography -->
+    <div id="lightbox" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-3xl w-full bg-slate-900 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" aria-label="Close Preview" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-900/80 text-white hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="Preview" class="w-full max-h-[70vh] object-cover">
+            <div class="p-6">
+                <h3 id="lightbox-title" class="text-xl font-bold text-white"></h3>
+                <p id="lightbox-desc" class="text-sm text-slate-400 mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Custom Toast Notification (No alert() used)
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-slate-900 text-white text-xs sm:text-sm font-medium px-4 py-3 rounded-xl shadow-lg border border-slate-700 flex items-center gap-2.5 transform transition-all duration-300 translate-y-2 opacity-0';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-amber-400"></i> <span>${message}</span>`;
+            container.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            });
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Clipboard Copy Helper using execCommand fallback
+        function copyText(text, label) {
+            try {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = text;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = '0';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                showToast(`${label} copied to clipboard!`);
+            } catch (err) {
+                showToast(`Unable to copy ${label}`);
+            }
+        }
+
+        // Photography Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const photoCards = document.querySelectorAll('.photo-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-amber-500', 'text-slate-900');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                btn.classList.remove('bg-slate-800', 'text-slate-300');
+                btn.classList.add('bg-amber-500', 'text-slate-900');
+
+                const filter = btn.getAttribute('data-filter');
+                photoCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Lightbox Controls
+        function openLightbox(title, desc, imgSrc) {
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox-desc').textContent = desc;
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        // Contact Form Submission via Mailto + Toast Feedback
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('sender-name').value.trim();
+            const topic = document.getElementById('sender-topic').value;
+            const message = document.getElementById('sender-message').value.trim();
+
+            const subject = encodeURIComponent(`[Portfolio - ${topic}] Message from ${name}`);
+            const body = encodeURIComponent(`Hi Farhan (Modhu),\n\n${message}\n\nBest regards,\n${name}`);
+
+            showToast('Opening your email client to send message...');
+            window.location.href = `mailto:farhanfuad311227@gmail.com?subject=${subject}&body=${body}`;
+            this.reset();
+        });
+    </script>
+</body>
+</html>
